@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Better_Cshark", "Better_Cshark.csproj", "{21B241D6-64FF-480E-AFA0-342B9FC125CB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{21B241D6-64FF-480E-AFA0-342B9FC125CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21B241D6-64FF-480E-AFA0-342B9FC125CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21B241D6-64FF-480E-AFA0-342B9FC125CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21B241D6-64FF-480E-AFA0-342B9FC125CB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8F28A633-E8BC-4815-8535-D9126463DDA7}
+	EndGlobalSection
+EndGlobal
