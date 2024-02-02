@@ -13,7 +13,7 @@ namespace Better_Cshark
     {
         public static void LecteurFichier()
         {
-            string nomFichierCsv = "Statistiques/Perso.csv";
+            string nomFichierCsv = "Statistiques/Player_Affichage.csv";
             string cheminFichierCsv = Path.Combine(Directory.GetCurrentDirectory(), nomFichierCsv);
 
             if (File.Exists(cheminFichierCsv))
