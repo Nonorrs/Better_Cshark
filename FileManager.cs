@@ -37,12 +37,12 @@ namespace Better_Cshark
                 {
                     string[] champs = parser.ReadFields();
 
-                    foreach (string champ in champs)
+                    /*foreach (string champ in champs)
                     {
                         Console.Write(champ + "\t");
                     }
 
-                    Console.WriteLine();
+                    Console.WriteLine();*/
                 }
             }
         }
