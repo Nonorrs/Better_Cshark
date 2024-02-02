@@ -13,8 +13,6 @@ class Program
         MapMake.AfficherDonjon(donjon);
         Console.Write("Tu commence l aventure Savun low cost! \n");
         // Afficher la carte du donjon avec contours
-        AfficherDonjon(donjon);
-
         FileManager.LecteurFichier();
 
         Console.ReadKey();
