@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Better_Cshark;
+using System;
 
 class Program
 {
@@ -29,6 +30,8 @@ class Program
 
         // Afficher la carte du donjon avec contours
         AfficherDonjon(donjon);
+
+        FileManager.LecteurFichier();
 
         Console.ReadKey();
     }
