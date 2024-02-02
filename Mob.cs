@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Better_Cshark
 {
-    internal class Mob
+    class Mob
     {
     }
 }

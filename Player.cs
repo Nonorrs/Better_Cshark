@@ -6,7 +6,21 @@ using System.Threading.Tasks;
 
 namespace Better_Cshark
 {
-    internal class Player
+    class Player
     {
+        char name;
+        int PV;
+        int PM;
+        int ATK;
+        int DEF;
+        int VIT;
+
+        char []Cap;
+        //char NameCap;
+        //int PMCap;
+        //int PuiCap;
+        //int PreCap;
+
+
     }
 }
