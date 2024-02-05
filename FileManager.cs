@@ -11,9 +11,8 @@ namespace Better_Cshark
 {
     class FileManager
     {
-        public static void LecteurFichier()
+        public static void LecteurFichier(string nomFichierCsv)
         {
-            string nomFichierCsv = "Statistiques/Player_Affichage.csv";
             string cheminFichierCsv = Path.Combine(Directory.GetCurrentDirectory(), nomFichierCsv);
 
             if (File.Exists(cheminFichierCsv))
@@ -37,12 +36,12 @@ namespace Better_Cshark
                 {
                     string[] champs = parser.ReadFields();
 
-                    /*foreach (string champ in champs)
+                    foreach (string champ in champs)
                     {
                         Console.Write(champ + "\t");
                     }
 
-                    Console.WriteLine();*/
+                    Console.WriteLine();
                 }
             }
         }
