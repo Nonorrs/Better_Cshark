@@ -2,20 +2,18 @@
 using System;
 class Program
 {
-    static void Main()
+    static void Main(string[] args)
     {
-        int largeur = 30;
-        int hauteur = 24;
-        char[,] donjon = new char[hauteur, largeur];
-        // Afficher la carte du donjon avec contours
 
-
-        //MapMake.AfficherDonjon(donjon);
-        //Console.Write("Tu commence l aventure Savun low cost! \n");
-        // Afficher la carte du donjon avec contours
         string playerAffichage = "Statistiques/Player_Affichage.csv";
         FileManager.LecteurFichier(playerAffichage);
-        Input.InputController();
+
+        Console.Write("Bonjour tout le monde \n");
+        Console.Write("Vous commencez l aventure Savun low cost! \n");
+
+        char[,] donjon = Map.GenererDonjon();
+        Map.AfficherDonjon(donjon);
+        Input.MovePlayer(donjon);
 
         Console.ReadKey();
     }
