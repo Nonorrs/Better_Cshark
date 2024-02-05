@@ -12,11 +12,9 @@ class Program
         Console.Write("Vous commencez l aventure Savun low cost! \n");
 
         char[,] donjon = Map.GenererDonjon();
-        Map.AfficherDonjon(donjon);
-        Input.MovePlayer(donjon);
+        int[,] map1 = Map.GenererMap1();
+        Input.MovePlayer(map1);
 
         Console.ReadKey();
     }
-
-
 }

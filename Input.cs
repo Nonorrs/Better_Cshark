@@ -10,7 +10,7 @@ namespace Better_Cshark
 {
     public class Input
     {
-        public static void MovePlayer(char[,] donjon)
+        public static void MovePlayer(int[,] donjon)
         {
             // Position initiale du joueur
             int playerX = 6;
@@ -47,7 +47,7 @@ namespace Better_Cshark
                 }
 
                 // Vérifier si la prochaine position est valide (pas un mur)
-                if (donjon[nextPlayerY, nextPlayerX] != '#')
+                if (donjon[nextPlayerY, nextPlayerX] != 1)
                 {
                     // Effacer la position actuelle du joueur
                     donjon[playerY, playerX] = ' ';
@@ -56,12 +56,10 @@ namespace Better_Cshark
                     playerX = nextPlayerX;
                     playerY = nextPlayerY;
 
-                    // Afficher le joueur à sa nouvelle position
-                    donjon[playerY, playerX] = 'O';
                 }
 
                 // Afficher le donjon avec la nouvelle position du joueur
-                Map.AfficherDonjon(donjon);
+                Map.AfficherMap1(playerY,playerX);
 
                 if (playerX == 1 || playerY == 1 || playerX == 3 && playerY == 3)
                 {
