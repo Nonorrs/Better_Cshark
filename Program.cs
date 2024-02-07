@@ -8,7 +8,7 @@ class Program
         string playerAffichage = "Statistiques/Player_Affichage.csv";
         FileManager.LecteurFichier(playerAffichage);
 
-        Console.Write("Bonjour tout le monde \n");
+        Console.Write("Bonjour tout le monde !\n");
         Console.Write("Vous commencez l aventure Savun low cost! \n");
 
         int[,] map1 = Map.GenererMap1();

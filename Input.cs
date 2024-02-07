@@ -59,11 +59,39 @@ namespace Better_Cshark
                 }
 
                 // Afficher le donjon avec la nouvelle position du joueur
-                Map.AfficherMap1(playerY,playerX);
+                Map.AfficherMap1(playerY, playerX);
 
                 if (playerX == 1 || playerY == 1 || playerX == 3 && playerY == 3)
                 {
                     Console.WriteLine("Viens on fait la course quand tu veux");
+                }
+            }
+        }
+
+        public static void BattleInput()
+        {
+            while (true)
+            {
+
+                ConsoleKeyInfo key = Console.ReadKey();
+                Console.Clear();
+                Console.WriteLine("Tu fais quoi wesh ma poule");
+
+                if (key.Key == ConsoleKey.NumPad1) // Attaquer agresivement
+                {
+                    Console.WriteLine("1 - Attaquons agressivement.");
+                }
+                else if (key.Key == ConsoleKey.NumPad2) // Inventaire
+                {
+                    Console.WriteLine("2 - Tu veux utiliser un objet agresivement ? Ah sale noob sans objet ici !");
+                }
+                else if (key.Key == ConsoleKey.NumPad3) // Changer de savun reference
+                {
+                    Console.WriteLine("3 - Qu'elle ref meme veux tu pour la horde !");
+                }
+                else if (key.Key == ConsoleKey.NumPad4) // Fuir
+                {
+                    Console.WriteLine("4 - Doucement D'accord ! NIGERUNDAYO !!!!");
                 }
             }
         }
