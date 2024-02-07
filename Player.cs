@@ -9,19 +9,7 @@ namespace Better_Cshark
 {
     class Player
     {
-        /*char name;
-        int PV;
-        int PM;
-        int ATK;
-        int DEF;
-        int VIT;
-
-        char []Cap;*/
-        //char NameCap;
-        //int PMCap;
-        //int PuiCap;
-        //int PreCap;
-
+    
         public static void Stockeur()
         {
             string filePath = "Statistiques/Stats_perso.csv";
@@ -136,7 +124,6 @@ namespace Better_Cshark
         public int CPM2 { get; set; }
         public int PuiCap2 { get; set; }
         public int PrecCap2 { get; set; }
-
     }
 
 }
