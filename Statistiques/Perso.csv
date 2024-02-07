@@ -1,18 +1,7 @@
-Nom,Type,PV,PM,ATK,DEF,VIT,,Nom Cap1,Coût PM Cap1,Puissance Cap1,Précision Cap1,Effet Cap1,,Nom Cap2,Coût PM Cap2,Puissance Cap2,Précision Cap2,Effet Cap2
-,,,,,,,,,,,,,,,,,,
-Kermit,Combat,140,70,90,80,85,,Piou-Piou,10,20,100,/,,Fan Service,15,0,95,Réduit de 10 la PREC adverse
-,,,,,,,,,,,,,,,,,,
+Nom,Type,PV,PM,ATK,DEF,VIT,,Nom Cap1,Coût PM Cap1,PUI Cap1,PREC Cap1,Effet Cap1,,Nom Cap2,Coût PM Cap2,PUI Cap2,PREC Cap2,Effet Cap2
 ,,,,,,,,,,,,,,,,,,
 Fabio,Acier,165,60,80,80,75,,Muscle Saillant,15,0,100,Augmente de 10 l'ATK et de 5 la DEF de Fabio,,Coup Ordinaire,5,30,90,Fabio devient encore plus magnifique (serarien)
 ,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,
-Morgane,Fee,130,120,110,70,110,,Dravocol,30,20,95,/,,Feu Maléfique,20,10,85,Réduit de 10 la DEF adverse
-,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,
 Maskass,Ténèbre,135,115,90,65,95,,Chaud Bouillant,15,0,95,Augmente de 10 l'ATK de Maskass,,Bob-Omb,30,40,95,/
-,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,
-Boo-gie,Spectre,130,80,130,75,70,,Léchouille,20,15,80,"A l'activation, récupère 5 PM de Boo-gie",,Ombre Portée,20,25,100,/
-,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,
 Cho Mantis,Psy,140,90,95,85,80,,Choc Mental,20,25,100,/,,Lévitation,15,0,90,Réduit de 10 la VIT adverse
