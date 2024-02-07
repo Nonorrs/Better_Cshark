@@ -14,13 +14,9 @@ namespace Better_Cshark
         int ATK;
         int DEF;
         int VIT;
+        int playerX = 6;
+        int playerY = 6;
 
         char []Cap;
-        //char NameCap;
-        //int PMCap;
-        //int PuiCap;
-        //int PreCap;
-
-
     }
 }

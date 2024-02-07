@@ -11,7 +11,6 @@ class Program
         Console.Write("Bonjour tout le monde \n");
         Console.Write("Vous commencez l aventure Savun low cost! \n");
 
-        char[,] donjon = Map.GenererDonjon();
         int[,] map1 = Map.GenererMap1();
         Input.MovePlayer(map1);
 
