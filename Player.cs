@@ -8,18 +8,6 @@ namespace Better_Cshark
 {
     class Player
     {
-        char name;
-        int PV;
-        int PM;
-        int ATK;
-        int DEF;
-        int VIT;
-
-        char []Cap;
-        //char NameCap;
-        //int PMCap;
-        //int PuiCap;
-        //int PreCap;
 
 
     }
