@@ -9,8 +9,7 @@ namespace Better_Cshark
 {
     public class Player
     {
-<<<<<<< HEAD
-=======
+
     
         public static void Stockeur()
         {
@@ -22,7 +21,7 @@ namespace Better_Cshark
             string userInput = Console.ReadLine();
 
             Perso selectedCharacter = GetPersoFromUserInput(userInput);
->>>>>>> 9cb92d4bdd1d71cbbfb5160b15ee87c7d0a43589
+
 
 
             if (charactersData.ContainsKey(selectedCharacter))
