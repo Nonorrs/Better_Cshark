@@ -10,7 +10,7 @@ namespace Better_Cshark
 {
     public class Input
         {
-            public static void MovePlayer(int[,] donjon)
+            public void MovePlayer(int[,] donjon)
             {
                 // Position initiale du joueur
                 int playerX = 6;

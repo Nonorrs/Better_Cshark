@@ -46,7 +46,7 @@ namespace Better_Cshark
 
         }
 
-        public static int[,] GenererMap1()
+        public int[,] GenererMap1()
         {
             int[,] map1data = new int[,]
             {

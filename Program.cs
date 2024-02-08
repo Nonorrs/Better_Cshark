@@ -4,7 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.Write("Voici les personnages jouables :\n\n"); 
+        /*Console.Write("Voici les personnages jouables :\n\n"); 
 
         string playerAffichage = "Statistiques/Player_Affichage.csv";
         FileManager.LecteurFichier(playerAffichage);
@@ -27,6 +27,10 @@ class Program
         int[,] map1 = Map.GenererMap1();
         Input.MovePlayer(map1);
 
-        Console.ReadKey();
+        Console.ReadKey();*/
+
+        GameLoop gameLoop = new GameLoop();
+
+        gameLoop.Loop();
     }
 }
