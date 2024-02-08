@@ -28,15 +28,19 @@ namespace Better_Cshark
     }
     public class PNJ
     {
+        public int pnjX;
+        public int pnjY;
         public string name;
         public string dialogue = "Je n'arrive pas à dormir, je voudrai un oreiller, peux-tu aller m'en chercher un?";
         public string dialogueQuestAccepted = "J'ai vraiment beasoin d'un oreiller.";
         public string dialogueQuestDone = "Je peux enfin dormir. Merci.";
         public Quest quest = new Quest("Dormir Tranquillement", "Ramène un oreiller au gus", "Oreiller", "Trophée", 1);
 
-        public PNJ(string _name)
+        public PNJ(string _name, int pnjX, int pnjY)
         {
             name = _name;
+            this.pnjX = pnjX;
+            this.pnjY = pnjY;
         }
 
         public void Talk(Inventaire inventory)

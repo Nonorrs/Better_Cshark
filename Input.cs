@@ -9,71 +9,36 @@ namespace Better_Cshark
 {
     public class Input
         {
-            public void MovePlayer(int[,] donjon, Inventaire inventory, PNJ pnj1)
+            public void inputPlayer(ConsoleKeyInfo _key, Player player, int[,] map)
             {
-                // Position initiale du joueur
-                int playerX = 6;
-                int playerY = 6;
+            // Vérifier si le joueur peut se déplacer dans la direction demandée
+            int nextPlayerX = player.playerX;
+            int nextPlayerY = player.playerY;
 
-
-                while (true)
+                if (_key.Key == ConsoleKey.UpArrow || _key.Key == ConsoleKey.Z)
                 {
-                    ConsoleKeyInfo key = Console.ReadKey();
-                    Console.Clear();
+                    nextPlayerY--;
+                }
+                else if (_key.Key == ConsoleKey.DownArrow || _key.Key == ConsoleKey.S)
+                {
+                    nextPlayerY++;
+                }
+                else if (_key.Key == ConsoleKey.LeftArrow || _key.Key == ConsoleKey.Q)
+                {
+                    nextPlayerX--;
+                }
+                else if (_key.Key == ConsoleKey.RightArrow || _key.Key == ConsoleKey.D)
+                {
+                    nextPlayerX++;
+                }
+                else if (_key.Key == ConsoleKey.P)
+                {
+                    player.inventory.DisplayInventory();
+                }
 
-                    // Vérifier si le joueur peut se déplacer dans la direction demandée
-                    int nextPlayerX = playerX;
-                    int nextPlayerY = playerY;
-
-                    if (key.Key == ConsoleKey.UpArrow || key.Key == ConsoleKey.Z)
-                    {
-                        nextPlayerY--;
-                    }
-                    else if (key.Key == ConsoleKey.DownArrow || key.Key == ConsoleKey.S)
-                    {
-                        nextPlayerY++;
-                    }
-                    else if (key.Key == ConsoleKey.LeftArrow || key.Key == ConsoleKey.Q)
-                    {
-                        nextPlayerX--;
-                    }
-                    else if (key.Key == ConsoleKey.RightArrow || key.Key == ConsoleKey.D)
-                    {
-                        nextPlayerX++;
-                    }
-                    else if (key.Key == ConsoleKey.P)
-                    {
-                        inventory.DisplayInventory();
-                    }
-                    else if (key.Key == ConsoleKey.E)
-                    {
-                        break;
-                    }
-
-                    // Vérifier si la prochaine position est valide (pas un mur)
-                    if (donjon[nextPlayerY, nextPlayerX] != 1)
-                    {
-                        // Effacer la position actuelle du joueur
-                        donjon[playerY, playerX] = ' ';
-
-                        // Mettre à jour la position du joueur
-                        playerX = nextPlayerX;
-                        playerY = nextPlayerY;
-
-                    }
-
-                    // Afficher le donjon avec la nouvelle position du joueur
-                    Map.AfficherMap1(playerY, playerX);
-
-                    if (playerX == 1 || playerY == 1)
-                    {
-                        Console.WriteLine("Viens on fait la course quand tu veux");
-                    }
-
-                    if (playerX ==3  && playerY == 3)
-                    {
-                        pnj1.Talk(inventory);
-                    }
+                if (map[nextPlayerX, nextPlayerY]!=1) 
+                {
+                    player.playerX = nextPlayerX; player.playerY = nextPlayerY;
                 }
             }
 

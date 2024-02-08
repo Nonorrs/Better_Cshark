@@ -9,6 +9,7 @@ namespace Better_Cshark
     internal class Game
     {
         Inventaire inventory = new Inventaire();
+        Player player = new Player();
         public void newGame()
         {
             Console.Write("Voici les personnages jouables :\n\n");
@@ -36,21 +37,34 @@ namespace Better_Cshark
 
         public void loadGame()
         {
+            Player.Stockeur();
             inventory.LoadInventory("inventory");
             launchGame();
         }
 
         public void launchGame()
         {
-            PNJ pnj1 = new PNJ("Gregouin");
+            ConsoleKeyInfo key = Console.ReadKey();
+
+            PNJ pnj1 = new PNJ("Gregouin", 3, 3);
             Map map = new Map();
-            int[,] map1 = map.GenererMap1();
+            int[,] mapData = map.GenererMap1();
 
             Input input = new Input();
 
-            input.MovePlayer(map1, inventory, pnj1);
+            player.inventory = inventory;
 
-            Console.ReadKey();
+            while (key.Key != ConsoleKey.Escape)
+            {
+                key = Console.ReadKey();
+                Console.Clear();
+                input.inputPlayer(key, player, mapData);
+                map.AfficherMap1(player.playerX, player.playerY);
+                if (player.playerX == pnj1.pnjX && player.playerY == pnj1.pnjY)
+                {
+                    pnj1.Talk(inventory);
+                }
+            }
         }
     }
 }

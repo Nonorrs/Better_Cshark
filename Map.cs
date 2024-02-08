@@ -10,20 +10,20 @@ namespace Better_Cshark
 {
     public class Map
     {
-        public static void AfficherMap1(int X, int Y)
+        public void AfficherMap1(int X, int Y)
         {
             string[] map1 = new string[]
             {
             "________________________________",
             "|                              |",
             "|                              |",
-            "|  ☺                           |",
-            "|                  ▒▒▒▒▒▒▒▒▒▒▒▒|",
-            "|                  ▒▒▒▒▒▒▒▒▒▒▒▒|",
-            "|                  ▒▒▒▒▒▒▒▒▒▒▒▒|",
-            "|                  ▒▒▒▒▒▒▒▒▒▒▒▒|",
-            "/-----------------/▒▒▒▒▒▒▒▒▒▒▒▒|",
-            "|                  ▒▒▒▒▒▒▒▒▒▒▒▒|",
+            "|  N                           |",
+            "|                  XXXXXXXXXXXX|",
+            "|                  XXXXXXXXXXXX|",
+            "|                  XXXXXXXXXXXX|",
+            "|                  XXXXXXXXXXXX|",
+            "/-----------------/XXXXXXXXXXXX|",
+            "|                  XXXXXXXXXXXX|",
             "|                              |",
             "|                              |",
             "|                              |",
@@ -31,13 +31,13 @@ namespace Better_Cshark
             "|______________________________|"
             };
 
-            char[] rowArray = map1[X].ToCharArray();
+            char[] rowArray = map1[Y].ToCharArray();
 
             // Update the character at the specified position
-            rowArray[Y] = '§';
+            rowArray[X] = '§';
 
             // Convert the char array back to a string and update the map
-            map1[X] = new string(rowArray);
+            map1[Y] = new string(rowArray);
 
             foreach (string line in map1)
             {

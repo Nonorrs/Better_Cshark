@@ -8,6 +8,7 @@ namespace Better_Cshark
 {
     internal class EcranTitre
     {
+        Game game = new Game();
         public int choix=0;
         public void AfficherEcranTitre()
         {
@@ -51,12 +52,11 @@ namespace Better_Cshark
             {
                 if (choix == 0)
                 {
-                    Game game = new Game();
                     game.newGame();
                 }
                 else if (choix == 1)
                 {
-
+                    game.loadGame();
                 }
                 else if (choix == 2)
                 {
