@@ -135,6 +135,14 @@ namespace Better_Cshark
 
         public void Talk(Inventaire inventory)
         {
+            foreach (Quest _quest in Quest.quests)
+            {
+                if (_quest.name == quest.name)
+                {
+                    quest.questAccepted = _quest.questAccepted;
+                    quest.questDone = _quest.questDone;
+                }
+            }
             Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine(name);
             Console.ForegroundColor = ConsoleColor.Gray;

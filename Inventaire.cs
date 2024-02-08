@@ -9,7 +9,7 @@ using System.IO;
 
 namespace Better_Cshark
 {
-    class Item
+    public class Item
     {
         public string name;
         public int quantity;
