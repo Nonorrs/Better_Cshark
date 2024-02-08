@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Better_Cshark
 {
-    public class Battle
+    /*public class Battle
     {
         static Random random = new Random();
         static bool PlayerBegin = false;
@@ -79,5 +79,5 @@ namespace Better_Cshark
                 }
             }
         }
-    }
+    }*/
 }
