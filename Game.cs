@@ -12,6 +12,7 @@ namespace Better_Cshark
         Player player = new Player();
         public void newGame()
         {
+            Console.Clear();
             Console.Write("Voici les personnages jouables :\n\n");
 
             string playerAffichage = "Statistiques/Player_Affichage.csv";
@@ -23,6 +24,8 @@ namespace Better_Cshark
             // Afficher la carte du donjon avec contours
             // FileManager.LecteurFichier();
 
+            Console.ReadLine();
+            Console.Clear();
             Console.Write("Bonjour tout le monde \n");
             Console.Write("Vous commencez l'aventure Savun low cost! \n");
             Console.Write("Pour vous déplacer vous pouvez utiliser ZQSD ou les flêches directionnelles.\n");
@@ -37,6 +40,7 @@ namespace Better_Cshark
 
         public void loadGame()
         {
+            Console.Clear();
             Player.Stockeur();
             inventory.LoadInventory("inventory");
             Quest.quests = new List<Quest>();
@@ -50,12 +54,15 @@ namespace Better_Cshark
             ConsoleKeyInfo key = Console.ReadKey();
 
             PNJ pnj1 = new PNJ("Gregouin", 3, 3);
+            Item oreiller = new Item("Oreiller", 1);
+            Item potion = new Item("Potion", 2);
+            Chest chest1 = new Chest(2, 12, oreiller);
+            Chest chest2 = new Chest(24,12, potion);
+            Chest[] chests= { chest1, chest2 };
             Map map = new Map();
             int[,] mapData = map.GenererMap1();
 
             Input input = new Input();
-
-            
 
             player.inventory = inventory;
 
@@ -68,6 +75,14 @@ namespace Better_Cshark
                 if (player.playerX == pnj1.pnjX && player.playerY == pnj1.pnjY)
                 {
                     pnj1.Talk(inventory);
+                }
+
+                for (int i = 0; i < chests.Length; i++)
+                {
+                    if (player.playerX == chests[i].ChestX && player.playerY == chests[i].ChestY)
+                    {
+                        chests[i].FindChest(inventory);
+                    }
                 }
             }
         }
