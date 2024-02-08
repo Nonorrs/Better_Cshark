@@ -24,8 +24,6 @@ namespace Better_Cshark
 
             Perso selectedCharacter = GetPersoFromUserInput(userInput);
 
-
-
             if (charactersData.ContainsKey(selectedCharacter))
             {
                 MyDataClass selectedCharactersData = charactersData[selectedCharacter];

@@ -36,7 +36,7 @@ namespace Better_Cshark
                     player.inventory.DisplayInventory();
                 }
 
-                if (map[nextPlayerX, nextPlayerY]!=1) 
+                if (map[nextPlayerY, nextPlayerX]!=1) 
                 {
                     player.playerX = nextPlayerX; player.playerY = nextPlayerY;
                 }

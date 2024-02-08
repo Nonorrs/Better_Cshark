@@ -13,34 +13,30 @@ namespace Better_Cshark
         public void AfficherEcranTitre()
         {
             Console.Clear();
-            if (choix==0)
-            {
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine("Nouvelle Partie");
-                Console.ForegroundColor = ConsoleColor.Gray;
-                Console.WriteLine("Charger Partie");
-                Console.WriteLine("Quitter");
 
-            }
-            else if (choix==1)
-            {
-                Console.ForegroundColor = ConsoleColor.Gray;
-                Console.WriteLine("Nouvelle Partie");
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine("Charger Partie");
-                Console.ForegroundColor = ConsoleColor.Gray;
-                Console.WriteLine("Quitter");
-            }
-            else
-            {
-                Console.ForegroundColor = ConsoleColor.Gray;
-                Console.WriteLine("Nouvelle Partie");
-                Console.WriteLine("Charger Partie");
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine("Quitter");
-                Console.ForegroundColor = ConsoleColor.Gray;
+            string[] options = { "Nouvelle Partie", "Charger Partie", "Quitter" };
 
+            for (int i = 0; i < options.Length; i++)
+            {
+                Console.SetCursorPosition(Console.WindowWidth / 2 - options[i].Length / 2, Console.CursorTop);
+
+                if (choix == i)
+                {
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.Write(">> ");
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                    Console.Write("   ");
+                }
+
+                Console.WriteLine(options[i]);
             }
+
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.WriteLine("\nAppuyez sur une touche pour continuer...");
+
             choisirOption();
         }
 

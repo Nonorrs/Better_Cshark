@@ -29,6 +29,8 @@ class Program
 
         Console.ReadKey();*/
 
+        Console.Title = "Better CShark";
+        Console.BackgroundColor = ConsoleColor.DarkYellow;
         GameLoop gameLoop = new GameLoop();
 
         gameLoop.Loop();

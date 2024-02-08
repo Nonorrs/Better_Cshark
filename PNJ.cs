@@ -59,7 +59,7 @@ namespace Better_Cshark
 
                     string reponse = Console.ReadLine();
 
-                    if (reponse == "OK")
+                    if (reponse == "OK" || reponse == "ok")
                     {
                         GiveQuest();
                         quest.questAccepted = true;
@@ -107,7 +107,7 @@ namespace Better_Cshark
 
             string reponse = Console.ReadLine();
 
-            if (reponse == "OK")
+            if (reponse == "OK" || reponse == "ok")
             {
                 quest.questDone = true;
                 Console.WriteLine("Requête " + quest.name + " terminée");
