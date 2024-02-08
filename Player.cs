@@ -11,13 +11,13 @@ namespace Better_Cshark
     {
 
     
-        public static void Stockeur()
+        public static MyDataClass Stockeur()
         {
             string filePath = "Statistiques/Stats_perso.csv";
 
             Dictionary<Perso, MyDataClass> charactersData = ReadDataFromCSV(filePath);
 
-            Console.Write("Tapez correctement le personnage que vous voulez jouer (Fabio ou Maskass ou Cho_Mantis)\n");
+            Console.Write("\nTapez correctement le personnage que vous voulez jouer (Fabio ou Maskass ou Cho_Mantis)\n");
             string userInput = Console.ReadLine();
 
             Perso selectedCharacter = GetPersoFromUserInput(userInput);
@@ -27,18 +27,18 @@ namespace Better_Cshark
             if (charactersData.ContainsKey(selectedCharacter))
             {
                 MyDataClass selectedCharactersData = charactersData[selectedCharacter];
-                Console.WriteLine($"Nom: {selectedCharactersData.Nom}, Type: {selectedCharactersData.Type}, PV: {selectedCharactersData.PV}, PM: {selectedCharactersData.PM}, ATK: {selectedCharactersData.ATK}, DEF: {selectedCharactersData.DEF}, VIT: {selectedCharactersData.VIT}");
+
+                Console.WriteLine($"\nNom: {selectedCharactersData.Nom}, Type: {selectedCharactersData.Type}, PV: {selectedCharactersData.PV}, PM: {selectedCharactersData.PM}, ATK: {selectedCharactersData.ATK}, DEF: {selectedCharactersData.DEF}, VIT: {selectedCharactersData.VIT}");
                 Console.WriteLine($"Nom Cap1: {selectedCharactersData.Cap1}, \nPM Cap1: {selectedCharactersData.CPM1}, Puissance Cap1: {selectedCharactersData.PuiCap1}, Precision Cap1: {selectedCharactersData.PrecCap1}");
                 Console.WriteLine($"Nom Cap2: {selectedCharactersData.Cap2}, \nPM Cap2: {selectedCharactersData.CPM2}, Puissance Cap2: {selectedCharactersData.PuiCap2}, Precision Cap2: {selectedCharactersData.PrecCap2}\n");
 
+                return selectedCharactersData;
             }
             else
             {
-                Console.WriteLine($"Personnage {selectedCharacter} non trouvé.");
+                Console.WriteLine($"Personnage {selectedCharacter} non trouvé.\n");
+                return null;
             }
-
-
-
         }
 
         static Dictionary<Perso, MyDataClass> ReadDataFromCSV(string filePath)
@@ -102,13 +102,13 @@ namespace Better_Cshark
         }
     }
 
-    enum Perso
+    public enum Perso
     {
         Fabio,
         Maskass,
         Cho_Mantis
     }
-    class MyDataClass
+    public class MyDataClass
     {
         public Perso Perso {  get; set; }
         public string Nom {  get; set; }

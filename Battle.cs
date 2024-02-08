@@ -5,27 +5,27 @@
 //using System.Text;
 //using System.Threading.Tasks;
 
-//namespace Better_Cshark
-//{
-//    public class Battle
-//    {
-//        static Random random = new Random();
-//        static bool PlayerBegin = false;
-//        static bool MobBegin = false;
-//        public static void BattleBegin()
-//        {
-//            if (Player.VIT > Mob.VIT)
-//            {
-//                PlayerBegin = true;
-//                MobBegin = false;
-//            }
-//            else if (Player.VIT < Mob.VIT)
-//            {
-//                MobBegin = true;
-//                PlayerBegin = false;
-//            }
-//            else if (Player.VIT == Mob.VIT)
-//            {
+namespace Better_Cshark
+{
+    /*public class Battle
+    {
+        static Random random = new Random();
+        static bool PlayerBegin = false;
+        static bool MobBegin = false;
+        public static void BattleBegin()
+        {
+            if(Player.VIT > Mob.VIT)
+            {
+                PlayerBegin = true;
+                MobBegin = false;
+            }
+            else if(Player.VIT < Mob.VIT)
+            {
+                MobBegin = true;
+                PlayerBegin = false;
+            }
+            else if(Player.VIT == Mob.VIT)
+            {
 
 //                int resultat = random.Next(2);
 
@@ -69,15 +69,15 @@
 //                        case "2":
 //                            break;
 
-//                        case "3":
-//                            break;
-
-//                        case "4":
-//                            BattleEnd();
-//                            break;
-//                    }
-//                }
-//            }
-//        }
-//    }
-//}
+                        case "3":
+                            break;
+                            
+                        case "4":
+                            BattleEnd();
+                            break;
+                    }
+                }
+            }
+        }
+    }*/
+}
