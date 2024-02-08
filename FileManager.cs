@@ -11,7 +11,7 @@ namespace Better_Cshark
 {
     class FileManager
     {
-        public static void LecteurFichier(string nomFichierCsv)
+        public void LecteurFichier(string nomFichierCsv)
         {
             string cheminFichierCsv = Path.Combine(Directory.GetCurrentDirectory(), nomFichierCsv);
 
