@@ -12,33 +12,45 @@ namespace Better_Cshark
         public int playerX = 6;
         public int playerY = 6;
 
+        private static Dictionary<Perso, MyDataClass>? CharactersData;
+
         public Inventaire inventory = new Inventaire();
-        public static MyDataClass Stockeur()
+        public static MyDataClass? Stockeur()
         {
             string filePath = "Statistiques/Stats_perso.csv";
 
-            Dictionary<Perso, MyDataClass> charactersData = ReadDataFromCSV(filePath);
+
+            //init : charger fichier csv
+            if (CharactersData is null)
+            {
+                CharactersData = ReadDataFromCSV(filePath);
+            }
+
 
             Console.Write("\nTapez correctement le personnage que vous voulez jouer (Fabio ou Maskass ou Cho_Mantis)\n");
             string userInput = Console.ReadLine();
 
             Perso selectedCharacter = GetPersoFromUserInput(userInput);
 
-            if (charactersData.ContainsKey(selectedCharacter))
-            {
-                MyDataClass selectedCharactersData = charactersData[selectedCharacter];
-
-                Console.WriteLine($"\nNom: {selectedCharactersData.Nom}, Type: {selectedCharactersData.Type}, PV: {selectedCharactersData.PV}, PM: {selectedCharactersData.PM}, ATK: {selectedCharactersData.ATK}, DEF: {selectedCharactersData.DEF}, VIT: {selectedCharactersData.VIT}");
-                Console.WriteLine($"Nom Cap1: {selectedCharactersData.Cap1}, \nPM Cap1: {selectedCharactersData.CPM1}, Puissance Cap1: {selectedCharactersData.PuiCap1}, Precision Cap1: {selectedCharactersData.PrecCap1}");
-                Console.WriteLine($"Nom Cap2: {selectedCharactersData.Cap2}, \nPM Cap2: {selectedCharactersData.CPM2}, Puissance Cap2: {selectedCharactersData.PuiCap2}, Precision Cap2: {selectedCharactersData.PrecCap2}\n");
-
-                return selectedCharactersData;
-            }
-            else
+            //person non trouve
+            if (!CharactersData.ContainsKey(selectedCharacter))
             {
                 Console.WriteLine($"Personnage {selectedCharacter} non trouvé.\n");
                 return null;
             }
+
+            MyDataClass selectedCharactersData = CharactersData[selectedCharacter];
+
+            Console.WriteLine($"\nNom: {selectedCharactersData.Nom}, Type: {selectedCharactersData.Type}, PV: {selectedCharactersData.PV}, PM: {selectedCharactersData.PM}, ATK: {selectedCharactersData.ATK}, DEF: {selectedCharactersData.DEF}, VIT: {selectedCharactersData.VIT}");
+            Console.WriteLine($"Nom Cap1: {selectedCharactersData.Cap1}, \nPM Cap1: {selectedCharactersData.CPM1}, Puissance Cap1: {selectedCharactersData.PuiCap1}, Precision Cap1: {selectedCharactersData.PrecCap1}");
+            Console.WriteLine($"Nom Cap2: {selectedCharactersData.Cap2}, \nPM Cap2: {selectedCharactersData.CPM2}, Puissance Cap2: {selectedCharactersData.PuiCap2}, Precision Cap2: {selectedCharactersData.PrecCap2}\n");
+
+            if (selectedCharactersData.PV > 0)
+            {
+                return selectedCharactersData;
+            }
+
+            return null;
         }
 
         static Dictionary<Perso, MyDataClass> ReadDataFromCSV(string filePath)
@@ -50,7 +62,7 @@ namespace Better_Cshark
                 using (var reader = new StreamReader(filePath))
                 {
                     //string headers = reader.ReadLine();
-                    
+
                     while (!reader.EndOfStream)
                     {
                         string line = reader.ReadLine();
@@ -100,62 +112,6 @@ namespace Better_Cshark
             }
             return Perso.Fabio;
         }
-        public static int GetPv()
-        {
-            MyDataClass selectedCharactersData = Stockeur();
-            if (selectedCharactersData != null)
-            {
-                return selectedCharactersData.PV;
-            }
-            return 0;
-        }
-        public static int GetVit()
-        {
-            MyDataClass selectedCharactersData = Stockeur();
-            if (selectedCharactersData != null)
-            {
-                return selectedCharactersData.VIT;
-            }
-            return 0; 
-        }
-        public static int GetAtt()
-        {
-            MyDataClass selectedCharactersData = Stockeur();
-            if (selectedCharactersData != null)
-            {
-                return selectedCharactersData.ATK;
-            }
-            return 0; 
-        }
-        public static int GetDef()
-        {
-            MyDataClass selectedCharactersData = Stockeur();
-            if (selectedCharactersData != null)
-            {
-                return selectedCharactersData.DEF;
-            }
-            return 0; 
-        }
-        public static int GetCap1()
-        {
-            MyDataClass selectedCharactersData = Stockeur();
-            if (selectedCharactersData != null)
-            {
-                return selectedCharactersData.PuiCap1;
-            }
-            return 0; 
-        }
-
-        public static int GetCap2()
-        {
-            MyDataClass selectedCharactersData = Stockeur();
-            if (selectedCharactersData != null)
-            {
-                return selectedCharactersData.PuiCap2;
-            }
-            return 0;
-        }
-
     }
 
     public enum Perso
@@ -183,7 +139,4 @@ namespace Better_Cshark
         public int PuiCap2 { get; set; }
         public int PrecCap2 { get; set; }
     }
-
-
-
 }
