@@ -6,7 +6,186 @@ using System.Threading.Tasks;
 
 namespace Better_Cshark
 {
-    class Mob
+    public class Mob
     {
+
+
+        public static MyDataClass Stockeur()
+        {
+            string filePath = "Statistiques/C_Shark_Mob.csv";
+
+            Dictionary<Perso, MyDataClass> charactersData = ReadDataFromCSV(filePath);
+
+            Console.Write("\nTapez correctement le personnage que vous voulez jouer (Fabio ou Maskass ou Cho_Mantis)\n");
+            string userInput = Console.ReadLine();
+
+            Perso selectedCharacter = GetPersoFromUserInput(userInput);
+
+
+
+            if (charactersData.ContainsKey(selectedCharacter))
+            {
+                MyDataClass selectedCharactersData = charactersData[selectedCharacter];
+
+                Console.WriteLine($"\nNom: {selectedCharactersData.MNom}, Type: {selectedCharactersData.MType}, PV: {selectedCharactersData.MPV}, PM: {selectedCharactersData.MPM}, ATK: {selectedCharactersData.MATK}, DEF: {selectedCharactersData.MDEF}, VIT: {selectedCharactersData.MVIT}");
+                Console.WriteLine($"Nom Cap1: {selectedCharactersData.MCap1}, \nPM Cap1: {selectedCharactersData.MCPM1}, Puissance Cap1: {selectedCharactersData.MPuiCap1}, Precision Cap1: {selectedCharactersData.MPrecCap1}");
+                Console.WriteLine($"Nom Cap2: {selectedCharactersData.Cap2}, \nPM Cap2: {selectedCharactersData.MCPM2}, Puissance Cap2: {selectedCharactersData.MPuiCap2}, Precision Cap2: {selectedCharactersData.MPrecCap2}\n");
+
+                return selectedCharactersData;
+            }
+            else
+            {
+                Console.WriteLine($"Personnage {selectedCharacter} non trouvé.\n");
+                return null;
+            }
+        }
+
+        static Dictionary<Perso, MyDataClass> ReadDataFromCSV(string filePath)
+        {
+            Dictionary<Perso, MyDataClass> charactersData = new Dictionary<Perso, MyDataClass>();
+
+            try
+            {
+                using (var reader = new StreamReader(filePath))
+                {
+                    //string headers = reader.ReadLine();
+
+                    while (!reader.EndOfStream)
+                    {
+                        string line = reader.ReadLine();
+
+                        string[] columns = line.Split(',');
+
+                        MyDataClass entry = new MyDataClass
+                        {
+                            MPerso = GetPersoFromUserInput(columns[0]),
+                            MNom = columns[0],
+                            MType = columns[1],
+                            MPV = int.Parse(columns[2]),
+                            MPM = int.Parse(columns[3]),
+                            MATK = int.Parse(columns[4]),
+                            MDEF = int.Parse(columns[5]),
+                            MVIT = int.Parse(columns[6]),
+                            MCap1 = columns[7],
+                            MCPM1 = int.Parse(columns[8]),
+                            MPuiCap1 = int.Parse(columns[9]),
+                            MPrecCap1 = int.Parse(columns[10]),
+                            MCap2 = columns[11],
+                            MCPM2 = int.Parse(columns[12]),
+                            MPuiCap2 = int.Parse(columns[13]),
+                            MPrecCap2 = int.Parse(columns[14])
+                        };
+
+                        charactersData.Add(entry.Perso, entry);
+                    }
+                }
+            }
+
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erreur lors de la lecture du fichier CSV: {ex.Message}");
+            }
+            return charactersData;
+        }
+
+        static Perso GetPersoFromUserInput(string userInput)
+        {
+            foreach (Perso perso in Enum.GetValues(typeof(Perso)))
+            {
+                if (string.Equals(userInput, perso.ToString(), StringComparison.OrdinalIgnoreCase))
+                {
+                    return perso;
+                }
+            }
+            return Perso.Fabio;
+        }
+        public static int GetPv()
+        {
+            MyDataClass selectedCharactersData = Stockeur();
+            if (selectedCharactersData != null)
+            {
+                return selectedCharactersData.MPV;
+            }
+            return 0;
+        }
+        public static int GetVit()
+        {
+            MyDataClass selectedCharactersData = Stockeur();
+            if (selectedCharactersData != null)
+            {
+                return selectedCharactersData.MVIT;
+            }
+            return 0;
+        }
+        public static int GetAtt()
+        {
+            MyDataClass selectedCharactersData = Stockeur();
+            if (selectedCharactersData != null)
+            {
+                return selectedCharactersData.MATK;
+            }
+            return 0;
+        }
+        public static int GetDef()
+        {
+            MyDataClass selectedCharactersData = Stockeur();
+            if (selectedCharactersData != null)
+            {
+                return selectedCharactersData.MDEF;
+            }
+            return 0;
+        }
+        public static int GetCap1()
+        {
+            MyDataClass selectedCharactersData = Stockeur();
+            if (selectedCharactersData != null)
+            {
+                return selectedCharactersData.MPuiCap1;
+            }
+            return 0;
+        }
+
+        public static int GetCap2()
+        {
+            MyDataClass selectedCharactersData = Stockeur();
+            if (selectedCharactersData != null)
+            {
+                return selectedCharactersData.MPuiCap2;
+            }
+            return 0;
+        }
+
     }
+
+    public enum Perso
+    {
+       Thwomp,
+       Detective_Pillow,
+       LeConduit,
+       Boogie,
+       ChoPathe,
+       Nathaniel,
+    }
+    public class MyDataClass
+    {
+        public Perso MPerso { get; set; }
+        public string MNom { get; set; }
+        public string MType { get; set; }
+        public int MPV { get; set; }
+        public int MPM { get; set; }
+        public int MATK { get; set; }
+        public int MDEF { get; set; }
+        public int MVIT { get; set; }
+        public string MCap1 { get; set; }
+        public int MCPM1 { get; set; }
+        public int MPuiCap1 { get; set; }
+        public int MPrecCap1 { get; set; }
+        public string MCap2 { get; set; }
+        public int MCPM2 { get; set; }
+        public int MPuiCap2 { get; set; }
+        public int MPrecCap2 { get; set; }
+    }
+
+
+
 }

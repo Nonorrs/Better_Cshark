@@ -100,6 +100,62 @@ namespace Better_Cshark
             }
             return Perso.Fabio;
         }
+        public static int GetPv()
+        {
+            MyDataClass selectedCharactersData = Stockeur();
+            if (selectedCharactersData != null)
+            {
+                return selectedCharactersData.PV;
+            }
+            return 0;
+        }
+        public static int GetVit()
+        {
+            MyDataClass selectedCharactersData = Stockeur();
+            if (selectedCharactersData != null)
+            {
+                return selectedCharactersData.VIT;
+            }
+            return 0; 
+        }
+        public static int GetAtt()
+        {
+            MyDataClass selectedCharactersData = Stockeur();
+            if (selectedCharactersData != null)
+            {
+                return selectedCharactersData.ATK;
+            }
+            return 0; 
+        }
+        public static int GetDef()
+        {
+            MyDataClass selectedCharactersData = Stockeur();
+            if (selectedCharactersData != null)
+            {
+                return selectedCharactersData.DEF;
+            }
+            return 0; 
+        }
+        public static int GetCap1()
+        {
+            MyDataClass selectedCharactersData = Stockeur();
+            if (selectedCharactersData != null)
+            {
+                return selectedCharactersData.PuiCap1;
+            }
+            return 0; 
+        }
+
+        public static int GetCap2()
+        {
+            MyDataClass selectedCharactersData = Stockeur();
+            if (selectedCharactersData != null)
+            {
+                return selectedCharactersData.PuiCap2;
+            }
+            return 0;
+        }
+
     }
 
     public enum Perso
@@ -127,5 +183,7 @@ namespace Better_Cshark
         public int PuiCap2 { get; set; }
         public int PrecCap2 { get; set; }
     }
+
+
 
 }
