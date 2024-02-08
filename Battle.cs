@@ -47,8 +47,9 @@ namespace Better_Cshark
         }
         static void BattleEnd()
         {
-            int[,] map1 = Map.GenererMap1();
-            Input.MovePlayer(map1);
+            GameLoop gameLoop = new GameLoop();
+            gameLoop.Loop();
+
         }
         static void BattleUpdate()
         {
@@ -58,6 +59,7 @@ namespace Better_Cshark
                 {
                     Input.BattleInput();
                     string battlefight = Console.ReadLine();
+                    string KappaChoice = Console.ReadLine();
 
                     switch (battlefight)
                     {
@@ -65,19 +67,56 @@ namespace Better_Cshark
                             Console.Write("Nan nan nan mauvais bouton mon con");
                             break;
                         case "1":
-                            int damage = (Player.GetAtt() + Player.GetCap1()) - Mob.GetDef();
+
+                            Console.Write("Tu choisis quel attaque ?");
+                            switch (KappaChoice)
+                            {
+                                case "1": 
+                                    int damage1 = (Player.GetAtt() + Player.GetCap1()) - Mob.GetDef();
+                                    break;
+                                    case "2":
+                                    int damage2 = (Player.GetAtt() + Player.GetCap2()) - Mob.GetDef();
+                                    break;
+                            }
+
                             break;
 
                         case "2":
+                            Console.WriteLine("Quel objet sacré veux-tu ?");
                             break;
 
                         case "3":
+                            Console.WriteLine("Quel meme veux tu utilisé ?");
                             break;
                             
                         case "4":
+                            Console.WriteLine("Caval Kenny ! Caval !");
+                            int Aled = random.Next(3);
+                            if (Aled > 2)
                             BattleEnd();
+                            else
+                            {
+                                Console.WriteLine("Je vais t'atacher dans mon camion! j'ai de la corde");
+                            }
                             break;
                     }
+                    PlayerBegin = false;
+                    MobBegin = true;
+                }
+                if (MobBegin = true)
+                {
+                    int Kappa = random.Next(2);
+
+                    if(Kappa == 0) 
+                    {
+                    int damageMob = (Mob.GetAtt() + Mob.GetCap1()) - Player.GetDef();
+                    }
+                    else
+                    {
+                    int damageMob = (Mob.GetAtt() + Mob.GetCap2()) - Player.GetDef();
+                    }
+                    PlayerBegin = true;
+                    MobBegin = false;
                 }
             }
         }

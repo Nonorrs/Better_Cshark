@@ -17,8 +17,7 @@ namespace Better_Cshark
             FileManager fileManager = new FileManager();
             fileManager.LecteurFichier(playerAffichage);
 
-            Player player = new Player();
-            player.Stockeur();
+            Player.Stockeur();
             // Afficher la carte du donjon avec contours
             //FileManager.LecteurFichier();
 

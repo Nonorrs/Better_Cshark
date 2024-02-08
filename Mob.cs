@@ -10,26 +10,26 @@ namespace Better_Cshark
     {
 
 
-        public static MyDataClass Stockeur()
+        public static MyDataClassMob MStockeur()
         {
             string filePath = "Statistiques/C_Shark_Mob.csv";
 
-            Dictionary<Perso, MyDataClass> charactersData = ReadDataFromCSV(filePath);
+            Dictionary<MPerso, MyDataClassMob> charactersData = ReadDataFromCSV(filePath);
 
             Console.Write("\nTapez correctement le personnage que vous voulez jouer (Fabio ou Maskass ou Cho_Mantis)\n");
             string userInput = Console.ReadLine();
 
-            Perso selectedCharacter = GetPersoFromUserInput(userInput);
+            MPerso selectedCharacter = GetPersoFromUserInput(userInput);
 
 
 
             if (charactersData.ContainsKey(selectedCharacter))
             {
-                MyDataClass selectedCharactersData = charactersData[selectedCharacter];
+                MyDataClassMob selectedCharactersData = charactersData[selectedCharacter];
 
                 Console.WriteLine($"\nNom: {selectedCharactersData.MNom}, Type: {selectedCharactersData.MType}, PV: {selectedCharactersData.MPV}, PM: {selectedCharactersData.MPM}, ATK: {selectedCharactersData.MATK}, DEF: {selectedCharactersData.MDEF}, VIT: {selectedCharactersData.MVIT}");
                 Console.WriteLine($"Nom Cap1: {selectedCharactersData.MCap1}, \nPM Cap1: {selectedCharactersData.MCPM1}, Puissance Cap1: {selectedCharactersData.MPuiCap1}, Precision Cap1: {selectedCharactersData.MPrecCap1}");
-                Console.WriteLine($"Nom Cap2: {selectedCharactersData.Cap2}, \nPM Cap2: {selectedCharactersData.MCPM2}, Puissance Cap2: {selectedCharactersData.MPuiCap2}, Precision Cap2: {selectedCharactersData.MPrecCap2}\n");
+                Console.WriteLine($"Nom Cap2: {selectedCharactersData.MCap2}, \nPM Cap2: {selectedCharactersData.MCPM2}, Puissance Cap2: {selectedCharactersData.MPuiCap2}, Precision Cap2: {selectedCharactersData.MPrecCap2}\n");
 
                 return selectedCharactersData;
             }
@@ -40,9 +40,9 @@ namespace Better_Cshark
             }
         }
 
-        static Dictionary<Perso, MyDataClass> ReadDataFromCSV(string filePath)
+        static Dictionary<MPerso, MyDataClassMob> ReadDataFromCSV(string filePath)
         {
-            Dictionary<Perso, MyDataClass> charactersData = new Dictionary<Perso, MyDataClass>();
+            Dictionary<MPerso, MyDataClassMob> charactersData = new Dictionary<MPerso, MyDataClassMob>();
 
             try
             {
@@ -56,9 +56,9 @@ namespace Better_Cshark
 
                         string[] columns = line.Split(',');
 
-                        MyDataClass entry = new MyDataClass
+                        MyDataClassMob entry = new MyDataClassMob
                         {
-                            MPerso = GetPersoFromUserInput(columns[0]),
+                            Mob = GetPersoFromUserInput(columns[0]),
                             MNom = columns[0],
                             MType = columns[1],
                             MPV = int.Parse(columns[2]),
@@ -76,7 +76,7 @@ namespace Better_Cshark
                             MPrecCap2 = int.Parse(columns[14])
                         };
 
-                        charactersData.Add(entry.Perso, entry);
+                        charactersData.Add(entry.Mob, entry);
                     }
                 }
             }
@@ -88,20 +88,20 @@ namespace Better_Cshark
             return charactersData;
         }
 
-        static Perso GetPersoFromUserInput(string userInput)
+        static MPerso GetPersoFromUserInput(string userInput)
         {
-            foreach (Perso perso in Enum.GetValues(typeof(Perso)))
+            foreach (MPerso perso in Enum.GetValues(typeof(MPerso)))
             {
                 if (string.Equals(userInput, perso.ToString(), StringComparison.OrdinalIgnoreCase))
                 {
                     return perso;
                 }
             }
-            return Perso.Fabio;
+            return MPerso.Thwomp;
         }
         public static int GetPv()
         {
-            MyDataClass selectedCharactersData = Stockeur();
+            MyDataClassMob selectedCharactersData = MStockeur();
             if (selectedCharactersData != null)
             {
                 return selectedCharactersData.MPV;
@@ -110,7 +110,7 @@ namespace Better_Cshark
         }
         public static int GetVit()
         {
-            MyDataClass selectedCharactersData = Stockeur();
+            MyDataClassMob selectedCharactersData = MStockeur();
             if (selectedCharactersData != null)
             {
                 return selectedCharactersData.MVIT;
@@ -119,7 +119,7 @@ namespace Better_Cshark
         }
         public static int GetAtt()
         {
-            MyDataClass selectedCharactersData = Stockeur();
+            MyDataClassMob selectedCharactersData = MStockeur();
             if (selectedCharactersData != null)
             {
                 return selectedCharactersData.MATK;
@@ -128,7 +128,7 @@ namespace Better_Cshark
         }
         public static int GetDef()
         {
-            MyDataClass selectedCharactersData = Stockeur();
+            MyDataClassMob selectedCharactersData = MStockeur();
             if (selectedCharactersData != null)
             {
                 return selectedCharactersData.MDEF;
@@ -137,7 +137,7 @@ namespace Better_Cshark
         }
         public static int GetCap1()
         {
-            MyDataClass selectedCharactersData = Stockeur();
+            MyDataClassMob selectedCharactersData = MStockeur();
             if (selectedCharactersData != null)
             {
                 return selectedCharactersData.MPuiCap1;
@@ -147,7 +147,7 @@ namespace Better_Cshark
 
         public static int GetCap2()
         {
-            MyDataClass selectedCharactersData = Stockeur();
+            MyDataClassMob selectedCharactersData = MStockeur();
             if (selectedCharactersData != null)
             {
                 return selectedCharactersData.MPuiCap2;
@@ -157,18 +157,18 @@ namespace Better_Cshark
 
     }
 
-    public enum Perso
+    public enum MPerso
     {
        Thwomp,
        Detective_Pillow,
        LeConduit,
        Boogie,
        ChoPathe,
-       Nathaniel,
+
     }
-    public class MyDataClass
+    public class MyDataClassMob
     {
-        public Perso MPerso { get; set; }
+        public MPerso Mob { get; set; }
         public string MNom { get; set; }
         public string MType { get; set; }
         public int MPV { get; set; }

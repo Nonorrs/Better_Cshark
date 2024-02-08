@@ -9,7 +9,7 @@ namespace Better_Cshark
 {
     public class Player
     {
-        public MyDataClass Stockeur()
+        public static MyDataClass Stockeur()
         {
             string filePath = "Statistiques/Stats_perso.csv";
 
