@@ -13,6 +13,12 @@ class Program
         Console.Write("Bonjour tout le monde \n");
         Console.Write("Vous commencez l aventure Savun low cost! \n");
 
+        Inventaire inventory = new Inventaire();
+
+        inventory.LoadInventory("inventory");
+        inventory.DisplayInventory();
+        
+
         int[,] map1 = Map.GenererMap1();
         Input.MovePlayer(map1);
 
