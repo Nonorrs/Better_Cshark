@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Better_Cshark.Statistiques;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -30,11 +31,13 @@ namespace Better_Cshark
             inventory.LoadInventory("inventory");
             inventory.DisplayInventory();
 
+            PNJ pnj1 = new PNJ("Gregouin");
             Map map = new Map();
             int[,] map1 = map.GenererMap1();
 
             Input input = new Input();
-            input.MovePlayer(map1);
+
+            input.MovePlayer(map1, inventory, pnj1);
 
             Console.ReadKey();
         }
