@@ -20,7 +20,7 @@ namespace Better_Cshark
         }
     }
 
-    internal class Inventaire
+    public class Inventaire
     {
         private List<Item> items = new List<Item>();
 
@@ -57,6 +57,11 @@ namespace Better_Cshark
                     items.Remove(itemToRemove);
                 }
             }
+        }
+
+        public bool ContainsItem(string itemName)
+        {
+            return items.Exists(item => item.name == itemName);
         }
 
         public void DisplayInventory()

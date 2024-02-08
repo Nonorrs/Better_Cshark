@@ -1,4 +1,5 @@
 ﻿using Better_Cshark;
+using Better_Cshark.Statistiques;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace Better_Cshark
 {
     public class Input
         {
-            public void MovePlayer(int[,] donjon)
+            public void MovePlayer(int[,] donjon, Inventaire inventory, PNJ pnj1)
             {
                 // Position initiale du joueur
                 int playerX = 6;
@@ -42,6 +43,10 @@ namespace Better_Cshark
                     {
                         nextPlayerX++;
                     }
+                    else if (key.Key == ConsoleKey.P)
+                    {
+                        inventory.DisplayInventory();
+                    }
                     else if (key.Key == ConsoleKey.E)
                     {
                         break;
@@ -62,9 +67,14 @@ namespace Better_Cshark
                     // Afficher le donjon avec la nouvelle position du joueur
                     Map.AfficherMap1(playerY, playerX);
 
-                    if (playerX == 1 || playerY == 1 || playerX == 3 && playerY == 3)
+                    if (playerX == 1 || playerY == 1)
                     {
                         Console.WriteLine("Viens on fait la course quand tu veux");
+                    }
+
+                    if (playerX ==3  && playerY == 3)
+                    {
+                        pnj1.Talk(inventory);
                     }
                 }
             }
