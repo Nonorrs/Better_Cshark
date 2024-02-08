@@ -18,6 +18,12 @@ class Program
         Console.Write("Pour vous déplacer vous pouvez utiliser ZQSD ou les flêches directionnelles.\n");
         Console.Write("Tapez n'importe quelle touche pour vous commencer.\n");
 
+        Inventaire inventory = new Inventaire();
+
+        inventory.LoadInventory("inventory");
+        inventory.DisplayInventory();
+        
+
         int[,] map1 = Map.GenererMap1();
         Input.MovePlayer(map1);
 
