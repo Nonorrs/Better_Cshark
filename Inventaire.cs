@@ -61,11 +61,18 @@ namespace Better_Cshark
 
         public void DisplayInventory()
         {
-            Console.WriteLine("Inventory:");
+            Console.WriteLine("╔════════════════════════════╗");
+            Console.Write("║");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Write("         INVENTAIRE         ");
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.WriteLine("║");
+            Console.WriteLine("╠════════════════════════════╣");
             foreach (var item in items)
             {
-                Console.WriteLine(item.name + " : x" + item.quantity);
+                Console.WriteLine($"║ {item.name,-20} x{item.quantity,-5}║");
             }
+            Console.WriteLine("╚════════════════════════════╝");
         }
 
         public void SaveInventory(string filePath)
