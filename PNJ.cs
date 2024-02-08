@@ -163,7 +163,7 @@ namespace Better_Cshark
                 {
                     if (inventory.ContainsItem(quest.itemName))
                     {
-                        CompleteQuest();
+                        CompleteQuest(inventory);
                         inventory.AddItem(quest.recompense, 1);
                     }
                     else
@@ -190,7 +190,7 @@ namespace Better_Cshark
             Quest.AddQuest(quest);
         }
 
-        public void CompleteQuest()
+        public void CompleteQuest(Inventaire inventory)
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("Oh, tu as un " + quest.itemName + ", tu me le donnes?");
@@ -203,7 +203,7 @@ namespace Better_Cshark
                 quest.questDone = true;
                 Console.WriteLine("Requête " + quest.name + " terminée");
                 Console.WriteLine("Vous gagner " + quest.recompense + ".");
-
+                inventory.RemoveItem(quest.itemName);
             }
             else
             {

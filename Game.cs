@@ -31,10 +31,7 @@ namespace Better_Cshark
             inventory.AddItem("Clef", 5);
             inventory.AddItem("Bombe", 5);
 
-            inventory.SaveInventory("inventory");
-
             Quest.quests = new List<Quest>();
-            Quest.SaveQuests("quests");
             launchGame();
         }
 

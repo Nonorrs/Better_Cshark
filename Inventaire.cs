@@ -118,6 +118,7 @@ namespace Better_Cshark
                         }
                     }
                 }
+                Console.WriteLine("Inventaire chargé avec succès.");
             }
             catch (Exception ex)
             {
