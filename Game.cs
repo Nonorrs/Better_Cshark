@@ -86,6 +86,15 @@ namespace Better_Cshark
                         chests[i].FindChest(inventory);
                     }
                 }
+
+                if( map.isBush(player.playerX, player.playerY))
+                {
+                    Random random = new Random();
+                    if (random.Next(100) > 75)
+                        Battle.StartBattle();
+
+
+                }
             }
         }
     }
