@@ -68,7 +68,7 @@ namespace Better_Cshark
         {
             Console.WriteLine("╔════════════════════════════╗");
             Console.Write("║");
-            Console.ForegroundColor = ConsoleColor.Green;
+            Console.ForegroundColor = ConsoleColor.Gray;
             Console.Write("         INVENTAIRE         ");
             Console.ForegroundColor = ConsoleColor.Gray;
             Console.WriteLine("║");

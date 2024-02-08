@@ -34,6 +34,23 @@ namespace Better_Cshark
                 else if (_key.Key == ConsoleKey.P)
                 {
                     player.inventory.DisplayInventory();
+                    Quest.DisplayQuests();
+                }
+                else if (_key.Key == ConsoleKey.M)
+                {
+                    Console.WriteLine("Voulez vous sauvegarder?");
+                    string reponse = Console.ReadLine();
+
+                    if (reponse == "OK" || reponse == "ok")
+                    {
+                        player.inventory.SaveInventory("inventory");
+                        Quest.SaveQuests("quests");
+                        Console.WriteLine("C'est bon");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Tant pis");
+                    }
                 }
 
                 if (map[nextPlayerY, nextPlayerX]!=1) 

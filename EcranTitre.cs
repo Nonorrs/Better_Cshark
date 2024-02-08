@@ -35,7 +35,7 @@ namespace Better_Cshark
             }
 
             Console.ForegroundColor = ConsoleColor.Gray;
-            Console.WriteLine("\nAppuyez sur une touche pour continuer...");
+            Console.WriteLine("\nAppuyez sur Entrée pour continuer...");
 
             choisirOption();
         }
@@ -60,11 +60,11 @@ namespace Better_Cshark
                 }
             }
 
-            if (key.Key == ConsoleKey.UpArrow)
+            if (key.Key == ConsoleKey.UpArrow || key.Key == ConsoleKey.Z)
             {
                 choix--;
             }
-            if (key.Key == ConsoleKey.DownArrow)
+            if (key.Key == ConsoleKey.DownArrow || key.Key == ConsoleKey.S)
             {
                 choix++;
             }

@@ -32,6 +32,9 @@ namespace Better_Cshark
             inventory.AddItem("Bombe", 5);
 
             inventory.SaveInventory("inventory");
+
+            Quest.quests = new List<Quest>();
+            Quest.SaveQuests("quests");
             launchGame();
         }
 
@@ -39,6 +42,9 @@ namespace Better_Cshark
         {
             Player.Stockeur();
             inventory.LoadInventory("inventory");
+            Quest.quests = new List<Quest>();
+            Quest.LoadQuests("quests");
+
             launchGame();
         }
 
@@ -51,6 +57,8 @@ namespace Better_Cshark
             int[,] mapData = map.GenererMap1();
 
             Input input = new Input();
+
+            
 
             player.inventory = inventory;
 
