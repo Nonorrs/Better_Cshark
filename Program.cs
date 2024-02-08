@@ -32,5 +32,6 @@ class Program
         GameLoop gameLoop = new GameLoop();
 
         gameLoop.Loop();
+
     }
 }

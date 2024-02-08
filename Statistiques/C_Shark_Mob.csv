@@ -1,8 +1,6 @@
-Nom,Type,PV,PM,ATK,DEF,VIT,,Nom Cap1,Coût PM Cap1,PUI Cap1,PREC Cap1,Effet Cap1,,Nom Cap2,Coût PM Cap2,PUI Cap2,PREC Cap2,Effet Cap2
-,,,,,,,,,,,,,,,,,,
-Thwomp,Combat,100,71,73,66,62,,Hin Hun,10,30,90,/,,Armure,10,0,100,Augmente la def de Thwomp  de 10 
-Detective_Pillow,Combat,133,55,79,80,57,,Patate de forain,5,20,100,/,,Un peu sus,5,0,90,Reduit de 10 les PM et de 5 l'ATK adverse
-LeConduit,Ténèbre,107,66,62,65,80,,Bonk,9,50,95,/,,Suivre le conduit,8,0,95,Reduit de 10 la VIT adverse
-Boogie,Ténèbre,118,65,86,73,58,,Léchouille,8,20,95,/,,Je suis Boo-gie,6,5,100,Augmente la VIT de Boo-gie de 10
-ChoPathe,Psy,110,60,75,62,60,,Technique du couteau de cuisine,11,25,100,/,,Majestuatisation,5,5,100,Réduit de 5 l'ATK et la DEF adverse
-Nathaniel,Psy,142,60,85,66,74,,GROSSE EPEE,5,25,100,/,,Meditation cosmique,15,0,88,Regenere 20 PV de Nathaniel
+Thwomp,Combat,100,71,73,66,62,Hin Hun,10,30,90,Armure,10,0,100
+Detective_Pillow,Combat,133,55,79,80,57,Patate de forain,5,20,100,Un peu sus,5,0,90
+LeConduit,Ténèbre,107,66,62,65,80,Bonk,9,50,95,Suivre le conduit,8,0,95
+Boogie,Ténèbre,118,65,86,73,58,Léchouille,8,20,95,Je suis Boo-gie,6,5,100
+ChoPathe,Psy,110,60,75,62,60,Technique du couteau de cuisine,11,25,100,Majestuatisation,5,5,100
+Nathaniel,Psy,142,60,85,66,74,GROSSE EPEE,5,25,100,Meditation cosmique,15,0,88

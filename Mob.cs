@@ -8,15 +8,13 @@ namespace Better_Cshark
 {
     public class Mob
     {
-
-
         public static MyDataClassMob MStockeur()
         {
-            string filePath = "Statistiques/C_Shark_Mob.csv";
+            string filePath = "Statistiques/C_Shark_Mob";
 
             Dictionary<MPerso, MyDataClassMob> charactersData = ReadDataFromCSV(filePath);
 
-            Console.Write("\nTapez correctement le personnage que vous voulez jouer (Fabio ou Maskass ou Cho_Mantis)\n");
+            Console.WriteLine("\nTapez correctement le personnage que vous voulez jouer (Thwomp,Detective_Pillow,LeConduit,Boogie,ChoPathe)");
             string userInput = Console.ReadLine();
 
             MPerso selectedCharacter = GetPersoFromUserInput(userInput);

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Better_Cshark.Statistiques
+namespace Better_Cshark
 {
     public class Quest
     {
@@ -33,7 +33,7 @@ namespace Better_Cshark.Statistiques
         public string dialogueQuestAccepted = "J'ai vraiment beasoin d'un oreiller.";
         public string dialogueQuestDone = "Je peux enfin dormir. Merci.";
         public Quest quest = new Quest("Dormir Tranquillement", "Ramène un oreiller au gus", "Oreiller", "Trophée", 1);
-        
+
         public PNJ(string _name)
         {
             name = _name;

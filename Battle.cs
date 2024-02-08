@@ -9,8 +9,6 @@ namespace Better_Cshark
 {
     public class Battle
     {
-        private Player player;
-        private Mob mob;
         static Random random = new Random();
         static bool PlayerBegin = false;
         static bool MobBegin = false;
