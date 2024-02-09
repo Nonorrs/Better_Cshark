@@ -21,6 +21,7 @@ namespace Better_Cshark
             fileManager.LecteurFichier(playerAffichage);
 
             Player.Stockeur();
+            
             // Afficher la carte du donjon avec contours
             // FileManager.LecteurFichier();
 
@@ -36,6 +37,7 @@ namespace Better_Cshark
 
             Quest.quests = new List<Quest>();
             launchGame();
+            //Battle.BattleBegin();
         }
 
         public void loadGame()
@@ -83,6 +85,15 @@ namespace Better_Cshark
                     {
                         chests[i].FindChest(inventory);
                     }
+                }
+
+                if( map.isBush(player.playerX, player.playerY))
+                {
+                    Random random = new Random();
+                    if (random.Next(100) > 75)
+                        Battle.StartBattle();
+
+
                 }
             }
         }

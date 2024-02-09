@@ -45,6 +45,18 @@ namespace Better_Cshark
             }
         }
 
+        public bool isBush(int X, int Y)
+        {
+            int[,] the_map = GenererMap1();
+
+            if (X < 0 || X >= the_map.GetLength(1))
+                return false;
+            if (Y < 0 || Y >= the_map.GetLength(0))
+                return false;
+
+            return the_map[Y, X] == 2;
+        }
+
         public int[,] GenererMap1()
         {
             int[,] map1data = new int[,]
